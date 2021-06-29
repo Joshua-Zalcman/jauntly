@@ -5,8 +5,8 @@ const Package = require('../models/package_model');
 
 //index
 packageRouter.get('/', async (req, res) => {
-	const package = await Package.find({});
-	res.json({ package });
+	const packages = await Package.find({});
+	res.json({ packages });
 });
 
 module.exports = packageRouter;
