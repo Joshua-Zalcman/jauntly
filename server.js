@@ -8,8 +8,10 @@ const app = express();
 mongoose.connect(DATABASE_URL, {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
+	useFindAndModify: false,
+	useCreateIndex: true,
 });
-// Connection Events
+// connection events
 mongoose.connection
 	.on('open', () => console.log('Your are connected to mongoose'))
 	.on('close', () => console.log('Your are disconnected from mongoose'))
@@ -18,6 +20,14 @@ mongoose.connection
 //middleware
 app.use(cors());
 app.use(express.json());
+
+//routes
+const packagesController = require('./controllers/package_controller');
+app.use('/packages', packagesController);
+
+app.get('/', (req, res) => {
+	res.send('Welcome to Jauntly');
+});
 
 //listener
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
