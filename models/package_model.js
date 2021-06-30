@@ -13,7 +13,6 @@ const packageSchema = new Schema(
 		country: { type: String, required: true },
 		city: { type: String, required: true },
 		address: { type: String, required: true },
-		guestNumber: { type: Number, required: true },
 		price: { type: Number, required: true },
 		tags: [TagSchema],
 		createdBy: {

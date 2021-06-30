@@ -8,6 +8,7 @@ const bookingSchema = new Schema(
 				price: { type: Number, required: true },
 				name: { type: String, required: true },
 				image: { type: String, required: true },
+				guestNumber: { type: Number, required: true, default: 1 },
 				isComplete: { type: Boolean, required: true, default: false },
 				date: { type: Date, required: true },
 				time: { type: Date, required: true },
