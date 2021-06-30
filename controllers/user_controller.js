@@ -17,7 +17,7 @@ userRouter.get('/', async (req, res) => {
 //seeder
 userRouter.post('/seeder', async (req, res) => {
 	try {
-		//add deletion here
+		await User.deleteMany({});
 		req.body = seedData;
 		res.json(await User.create(req.body));
 	} catch (error) {
