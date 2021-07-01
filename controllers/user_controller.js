@@ -49,8 +49,22 @@ userRouter.post('/login', async (req, res) => {
 				}
 			}
 		} else {
-			res.json('enter password');
+			res.json({ message: 'enter password' });
 		}
+	} catch (err) {
+		res.status(400).json(error);
+	}
+});
+
+//create
+userRouter.post('/', async (req, res) => {
+	try {
+		req.body.password = bcrypt.hashSync(
+			req.body.password,
+			bcrypt.genSaltSync(10)
+		);
+		const user = await User.create(req.body);
+		res.json({ user });
 	} catch (err) {
 		res.status(400).json(error);
 	}
