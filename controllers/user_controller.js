@@ -64,7 +64,14 @@ userRouter.post('/', async (req, res) => {
 			bcrypt.genSaltSync(10)
 		);
 		const user = await User.create(req.body);
-		res.json({ user });
+		jwt.sign(
+			{ user },
+			process.env.SECRET,
+			{ expiresIn: '1h' },
+			(err, token) => {
+				res.json({ token, message: 'successful login' });
+			}
+		);
 	} catch (err) {
 		res.status(400).json(error);
 	}
