@@ -9,7 +9,7 @@ module.exports = [
 		city: 'Rio de Janeiro',
 		address: 'Tom Jobim International Airport',
 		price: 20,
-		tags: ['Transportation', 'Airport', 'Rio'],
+		tags: [{ tag: 'Transportation' }, { tag: 'Airport' }, { tag: 'Rio' }],
 		createdBy: '',
 	},
 	{
@@ -22,7 +22,12 @@ module.exports = [
 		city: 'Rio de Janeiro',
 		address: 'Av. Pasteur, 520 - Urca, Rio de Janeiro',
 		price: 15,
-		tags: ['Transportation', 'Views', 'Hikes', 'Rio'],
+		tags: [
+			{ tag: 'Transportation' },
+			{ tag: 'Views' },
+			{ tag: 'Hikes' },
+			{ tag: 'Rio' },
+		],
 		createdBy: '',
 	},
 	{
@@ -35,7 +40,12 @@ module.exports = [
 		city: 'Rio de Janeiro',
 		address: 'R. Cosme Velho, 513 - Cosme Velho, Rio de Janeiro',
 		price: 25,
-		tags: ['Views', 'Hikes', 'Nature', 'Rio'],
+		tags: [
+			{ tag: 'Views' },
+			{ tag: 'Hikes' },
+			{ tag: 'Nature' },
+			{ tag: 'Rio' },
+		],
 		createdBy: '',
 	},
 ];
