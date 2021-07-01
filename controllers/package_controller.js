@@ -30,4 +30,14 @@ packageRouter.post('/seeder', async (req, res) => {
 	}
 });
 
+//show
+packageRouter.get('/:id', async (req, res) => {
+	try {
+		const package = await Package.findById(req.params.id);
+		res.json({ package });
+	} catch (error) {
+		res.status(400).json(error);
+	}
+});
+
 module.exports = packageRouter;
