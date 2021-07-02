@@ -26,6 +26,8 @@ const packagesController = require('./controllers/package_controller');
 app.use('/packages', packagesController);
 const usersController = require('./controllers/user_controller');
 app.use('/users', usersController);
+const bookingsController = require('./controllers/booking_controller');
+app.use('/bookings', bookingsController);
 
 app.get('/', (req, res) => {
 	res.send('Welcome to Jauntly');

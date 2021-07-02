@@ -7,7 +7,7 @@ const Booking = require('../models/booking_model');
 //index
 
 //create
-bookingRouter.post('/bookings', async (req, res) => {
+bookingRouter.post('/', async (req, res) => {
 	try {
 		const booking = await Booking.create(req.body);
 		res.json({ booking, message: 'booking successful!' });
