@@ -16,5 +16,13 @@ bookingRouter.post('/', async (req, res) => {
 	}
 });
 //show
+bookingRouter.get('/:id', async (req, res) => {
+	try {
+		const bookings = await Booking.find({ user: req.params.id });
+		res.json({ bookings });
+	} catch (err) {
+		res.status(400).json(error);
+	}
+});
 
 module.exports = bookingRouter;
