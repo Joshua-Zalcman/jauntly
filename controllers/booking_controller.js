@@ -10,6 +10,7 @@ const Booking = require('../models/booking_model');
 bookingRouter.post('/bookings', async (req, res) => {
 	try {
 		const booking = await Booking.create(req.body);
+		res.json({ booking, message: 'booking successful!' });
 	} catch (err) {
 		res.status(400).json(error);
 	}

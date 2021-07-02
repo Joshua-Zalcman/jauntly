@@ -6,7 +6,7 @@ const bookingSchema = new Schema(
 		bookingItems: [
 			{
 				price: { type: Number, required: true },
-				name: { type: String, required: true },
+				title: { type: String, required: true },
 				image: { type: String, required: true },
 				guestNumber: { type: Number, required: true, default: 1 },
 				isComplete: { type: Boolean, required: true, default: false },
