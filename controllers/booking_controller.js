@@ -37,7 +37,7 @@ bookingRouter.get('/:id', async (req, res) => {
 bookingRouter.put('/:id', async (req, res) => {
 	try {
 		const booking = await Booking.findByIdAndUpdate(req.params.id, req.body);
-		res.json({ booking, message: 'Updated Booking!' });
+		res.json({ message: 'Updated Booking!', booking });
 	} catch (err) {
 		res.status(400).json(err);
 	}
