@@ -95,10 +95,10 @@ userRouter.post('/seeder', async (req, res) => {
 //update
 userRouter.put('/:id', async (req, res) => {
 	try {
-		const user = await User.findByIdAndUpdate(req.params.idreq.body);
+		const user = await User.findByIdAndUpdate(req.params.id, req.body);
 		res.json({ user });
 	} catch (err) {
-		res.status(400).json(error);
+		res.status(400).json(err);
 	}
 });
 
