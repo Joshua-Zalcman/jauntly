@@ -103,7 +103,7 @@ module.exports = [
 		image:
 			'https://images.unsplash.com/photo-1521136095380-08fbd7be93c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
 		country: 'Brazil',
-		city: 'Manuas',
+		city: 'Manaus',
 		address: 'Eduardo Gomes International Airport',
 		price: 20,
 		tags: [{ tag: 'Transportation' }, { tag: 'Airport' }, { tag: 'Manaus' }],

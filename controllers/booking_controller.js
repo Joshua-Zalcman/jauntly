@@ -5,6 +5,14 @@ const Package = require('../models/package_model');
 const Booking = require('../models/booking_model');
 
 //index
+bookingRouter.get('/', async (req, res) => {
+	try {
+		const bookings = await Booking.find({});
+		res.json({ bookings });
+	} catch (error) {
+		res.status(400).json(error);
+	}
+});
 
 //create
 bookingRouter.post('/', async (req, res) => {
