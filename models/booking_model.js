@@ -9,7 +9,7 @@ const bookingSchema = new Schema(
 				title: { type: String, required: true },
 				image: { type: String, required: true },
 				guestNumber: { type: Number, required: true, default: 1 },
-				isComplete: { type: Boolean, required: true, default: false },
+
 				date: { type: Date, required: true },
 				//time: { type: Date, required: true },
 				package: {
@@ -19,11 +19,13 @@ const bookingSchema = new Schema(
 				},
 			},
 		],
+		isComplete: { type: Boolean, required: true, default: false },
 		user: {
 			type: Schema.Types.ObjectId,
 			required: true,
 			ref: 'User',
 		},
+		name: { type: String, required: true },
 		totalPrice: { type: Number, required: true },
 		isPaid: { type: Boolean, required: true, default: false },
 	},

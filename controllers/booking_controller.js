@@ -20,7 +20,7 @@ bookingRouter.post('/', async (req, res) => {
 		const booking = await Booking.create(req.body);
 		res.json({ booking, message: 'booking successful!' });
 	} catch (err) {
-		res.status(400).json(error);
+		res.status(400).json(err);
 	}
 });
 //show
